@@ -6,24 +6,17 @@ A comprehensive collection of SwiftUI patterns, best practices, and architectura
 
 ### [Navigation & Routing](./docs/navigation/)
 
-- Tab Navigation
-- Navigation Stack
-- Deep Linking
-- Custom Navigation
+- [SwiftUI Routes](./docs/navigation/swiftui-routes.md)
 
 ### [Dependencies & Injection](./docs/dependencies/)
 
-- Dependency Injection
-- Factory Pattern
-- Micro Dependencies
-- Service Locator
+- [Dependencies (PointFree)](./docs/dependencies/dependencies.md)
+- [FactoryKit](./docs/dependencies/factory.md)
+- [Dependencies (Micro App)](./docs/dependencies/micro.md)
 
 ### [Testing](./docs/testing/)
 
-- Snapshot Testing
-- Unit Testing
-- UI Testing
-- Test Patterns
+- [SwiftUI Snapshots](./docs/testing/swiftui-snapshots.md)
 
 ## 🤝 Contributing
 
