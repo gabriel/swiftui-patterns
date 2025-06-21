@@ -1,0 +1,25 @@
+title: SwiftUI Patterns
+description: A comprehensive collection of SwiftUI patterns and best practices
+author: Gabriel Handford
+url: "https://gabriel.github.io"
+baseurl: "/swiftui-patterns"
+
+# GitHub Pages settings
+theme: jekyll-theme-cayman
+plugins:
+  - jekyll-relative-links
+  - jekyll-seo-tag
+
+# Navigation
+nav:
+  - title: Navigation
+    url: /docs/navigation/
+  - title: Dependencies
+    url: /docs/dependencies/
+  - title: Testing
+    url: /docs/testing/  
+
+# Social links
+social:
+  github: gabriel
+  
