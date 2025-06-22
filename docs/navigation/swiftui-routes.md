@@ -9,11 +9,10 @@ SwiftUI Routes is designed to solve navigation challenges in complex SwiftUI app
 ## Key Features
 
 - **Dual Routing Approaches**: Support for both URL-based and Type-based routes
-- **Package Independence**: Routes can be registered from different packages without tight coupling
-- **Environment Integration**: Routes are accessible via SwiftUI's Environment system
 - **Deep Linking Support**: URL-based routes enable deep linking capabilities
 - **Type Safety**: Type-based routes provide compile-time safety
-- **Observable**: Routes are Observable and integrate seamlessly with SwiftUI's reactive system
+- **Package Independence**: Routes can be registered from different packages without tight coupling
+- **Observable**: Routes are Observable and integrate with the view environment
 
 ## Usage
 
@@ -265,10 +264,3 @@ struct PackageBView: View {
     }
 }
 ```
-
-## Best Practices
-
-- Use URL-based routes for deep linking and cross-package navigation
-- Use Type-based routes for internal navigation within packages
-- Register routes in a dedicated function within each package
-- Access routes via `@Environment(Routes.self)` in registered views
