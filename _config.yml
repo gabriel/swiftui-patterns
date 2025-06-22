@@ -3,12 +3,14 @@ description: A collection of SwiftUI patterns and best practices
 author: Gabriel Handford
 url: "https://gabriel.github.io"
 baseurl: "/swiftui-patterns"
+remote_theme: pages-themes/minimal@v0.2.0
 
 # GitHub Pages settings
-theme: jekyll-theme-cayman
+# theme: jekyll-theme-cayman
 plugins:
   - jekyll-relative-links
   - jekyll-seo-tag
+  - jekyll-remote-theme
 
 # Navigation
 nav:
