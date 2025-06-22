@@ -2,9 +2,7 @@
 
 [github.com/gabriel/swiftui-routes](https://github.com/gabriel/swiftui-routes)
 
-##
-
-SwiftUI Routes is designed to solve navigation challenges in complex SwiftUI applications, particularly when dealing with multiple packages and dependencies. It provides a unified routing system that can handle both URL-based deep linking and type-safe navigation.
+This package is designed to solve navigation challenges in complex SwiftUI applications, particularly when dealing with multiple packages and dependencies. It provides a unified routing system that can handle both URL-based deep linking and type-safe navigation.
 
 ## Key Features
 
