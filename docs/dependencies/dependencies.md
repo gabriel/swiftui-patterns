@@ -4,6 +4,8 @@ Swift Dependencies
 [github.com/pointfreeco/swift-dependencies](https://github.com/pointfreeco/swift-dependencies)
 is a powerful dependency injection library from Point-Free that provides a clean, type-safe way to manage dependencies in Swift applications. It's designed with SwiftUI in mind and offers excellent support for testing and modular architecture.
 
+How it Works: You define a DependencyKey that specifies a liveValue for your app and a testValue for testing. You then extend DependencyValues to create a new key path for your dependency. In your views or view models, you use the @Dependency property wrapper to access the dependency.
+
 ## Basic Usage
 
 ### 1. Define Dependencies
@@ -18,6 +20,7 @@ protocol NetworkClient {
 
 // Create a dependency key
 private enum NetworkClientKey: DependencyKey {
+    // In Swift, static properties are initialized lazily by default.
     static let liveValue: NetworkClient = LiveNetworkClient()
     static let testValue: NetworkClient = TestNetworkClient()
 }

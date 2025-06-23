@@ -10,7 +10,6 @@ This package is designed to solve navigation challenges in complex SwiftUI appli
 - **Deep Linking Support**: URL-based routes enable deep linking capabilities
 - **Type Safety**: Type-based routes provide compile-time safety
 - **Package Independence**: Routes can be registered from different packages without tight coupling
-- **Observable**: Routes are Observable and integrate with the view environment
 
 ## Usage
 

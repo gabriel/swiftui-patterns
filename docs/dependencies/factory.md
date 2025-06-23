@@ -4,6 +4,8 @@ Factory
 [github.com/hmlongco/Factory](https://github.com/hmlongco/Factory)
 is a modern, container-based dependency injection system designed specifically for Swift and SwiftUI applications. It provides a clean, type-safe way to manage dependencies with minimal boilerplate code.
 
+How it Works: You register your dependencies within an extension on a Container object. For each dependency, you provide a factory closure that creates an instance. You can assign a scope (like .singleton or .session) to control the instance's lifetime. Dependencies are then resolved using property wrappers like @Injected or @InjectedObservable.
+
 ## Basic Usage
 
 ### 1. Define Your Services
