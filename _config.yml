@@ -18,6 +18,8 @@ nav:
     url: /docs/navigation/
   - title: Dependencies
     url: /docs/dependencies/
+  - title: Awesome Swift Libraries
+    url: /docs/awesome/
   - title: Testing
     url: /docs/testing/  
 
