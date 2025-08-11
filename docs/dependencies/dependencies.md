@@ -147,7 +147,10 @@ import Dependencies
 @MainActor
 @Observable
 class ItemsViewModel {
+    @ObservationIgnored
     @Dependency(\.networkClient) private var networkClient
+    
+    @ObservationIgnored
     @Dependency(\.analyticsClient) private var analyticsClient
     
     var items: [Item] = []
