@@ -15,8 +15,8 @@ Least-recently-used cache implementation.
 
 ## UI & User Experience
 
-**ButtonKit** (0.6.1) - [github.com/danielctull/ButtonKit](https://github.com/danielctull/ButtonKit)
-Collection of useful button styles for SwiftUI.
+**ButtonKit** (0.6.1) - [github.com/Dean151/ButtonKit](https://github.com/Dean151/ButtonKit)
+ButtonKit provides a new a SwiftUI Button replacement to deal with throwable and asynchronous actions.
 
 **SFSafeSymbols** (4.1.1) - [github.com/piknotech/SFSafeSymbols](https://github.com/piknotech/SFSafeSymbols)
 Safe way to use SF Symbols with compile-time validation.
