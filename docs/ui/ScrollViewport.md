@@ -10,66 +10,40 @@
 
 `ScrollViewport` tracks a private `viewportDepth` in the environment so only the first level injects the measurement; inner scroll views behave like plain `ScrollView`s.
 
-## Basic Usage
+## Example
 
 ```swift
-struct InboxView: View {
-  var body: some View {
-    ScrollViewport { // defaults to vertical axes
-      LazyVStack(alignment: .leading, spacing: 16) {
-        ForEach(messages) { message in
-          MessageRow(message: message)
+private struct CarouselView: View {
+    var body: some View {
+        ScrollViewport {
+            TextCarousel()
         }
-      }
-      .padding()
     }
-  }
 }
-```
 
-Inside the hierarchy you can read the viewport via the `.viewport` environment key:
+private struct TextCarousel: View {
+    @Environment(\.viewport) private var viewport
 
-```swift
-struct MessageRow: View {
-  let message: Message
-  @Environment(\.viewport) private var viewport
-
-  var body: some View {
-    Text(message.body)
-      .frame(maxWidth: viewport.size.width * 0.9, alignment: .leading)
-      .padding()
-      .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 12))
-  }
-}
-```
-
-The `Viewport` value includes both `size` and `safeAreaInsets`, which is handy for layouts targeting full-screen presentations.
-
-## Nested Scroll Views
-
-`ScrollViewport` shines when the layout inside needs to spin up its own `ScrollView`. The outer viewport captures the device geometry before the inner scroll view changes the coordinate space.
-
-```swift
-struct FeaturedCarousel: View {
-  @Environment(\.viewport) private var viewport
-
-  var body: some View {
-    ScrollViewport {
-      ScrollView(.horizontal, showsIndicators: false) {
-        LazyHStack(spacing: 24) {
-          ForEach(features) { feature in
-            FeatureCard(feature)
-              .frame(width: viewport.size.width * 0.8)
-          }
+    var body: some View {
+        ScrollViewport {
+            ScrollView(.horizontal, showsIndicators: false) {
+                LazyHStack(alignment: .top, spacing: 0) {
+                    ForEach(0 ..< 10) { idx in
+                        Text("#\(idx): " + HipsterLorem.paragraphs(1, seed: UInt64(idx)))
+                            .frame(width: viewport.size.width * 0.6) // Viewport used here
+                            .padding()
+                            .background(Color.secondary.opacity(0.2))
+                            .cornerRadius(8)
+                            .padding(.leading, 8)
+                    }
+                }
+            }
         }
-        .padding(.horizontal, viewport.safeAreaInsets.leading + 16)
-      }
     }
-  }
 }
 ```
 
-The inner `ScrollView` behaves normally, but every descendant can still read the outer viewport to size cards, adjust safe-area padding, or drive animations.
+Inside the hierarchy you can read the viewport via the `.viewport` environment key; the nested `FeaturedCarousel` uses it to size cards relative to the screen and respect safe areas. The `Viewport` value includes both `size` and `safeAreaInsets`, which is handy for layouts targeting full-screen presentations. `ScrollViewport` shines when inner content needs to spin up its own `ScrollView`, because the outer viewport captures the device geometry before the inner scroll view changes the coordinate space. The inner `ScrollView` behaves normally, but every descendant can still read the outer viewport to size cards, adjust safe-area padding, or drive animations.
 
 ## Tips
 

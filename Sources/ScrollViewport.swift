@@ -82,54 +82,52 @@ struct ScrollViewport<Content: View>: View {
     }
 }
 
-private struct ScrollViewportHorizontalPreview: View {
-    @Environment(\.viewport) var viewport: Viewport
+// MARK: - Previews
 
+private struct CarouselView: View {
     var body: some View {
-        LazyHStack {
-            ForEach(0 ..< 10) { idx in
-                Text("#\(idx): " + HipsterLorem.paragraphs(1, seed: UInt64(idx)))
-                    .frame(width: viewport.size.width * 0.8)
-                    .padding()
-                    .background(Color.secondary.opacity(0.2))
-                    .cornerRadius(8)
-            }
-        }
-        .padding()
-    }
-}
-
-private struct ScrollViewportVerticalPreview: View {
-    @Environment(\.viewport) var viewport: Viewport
-
-    var body: some View {
-        LazyVStack {
-            ForEach(0 ..< 10) { idx in
-                Text("#\(idx): " + HipsterLorem.sentence(seed: UInt64(idx)))
-                    .padding()
-                    .frame(width: viewport.size.width * 0.5)
-                    .background(Color.secondary.opacity(0.2))
-                    .cornerRadius(8)
-            }
-        }
-        .padding()
-    }
-}
-
-#Preview("Horizontal") {
-    NavigationStack {
-        ScrollViewport(.horizontal) {
-            ScrollViewportHorizontalPreview()
-        }
-    }
-}
-
-#Preview("Vertical") {
-    NavigationStack {
         ScrollViewport {
-            ScrollView(.vertical) {
-                ScrollViewportVerticalPreview()
+            TextCarousel()
+        }
+    }
+}
+
+private struct TextCarousel: View {
+    @Environment(\.viewport) private var viewport
+
+    var body: some View {
+        ScrollViewport {
+            ScrollView(.horizontal, showsIndicators: false) {
+                LazyHStack(alignment: .top, spacing: 0) {
+                    ForEach(0 ..< 10) { idx in
+                        Text("#\(idx): " + HipsterLorem.paragraphs(1, seed: UInt64(idx)))
+                            .frame(width: viewport.size.width * 0.6)
+                            .padding()
+                            .background(Color.secondary.opacity(0.2))
+                            .cornerRadius(8)
+                            .padding(.leading, 8)
+                    }
+                }
+            }
+
+            ScrollView(.horizontal, showsIndicators: false) {
+                LazyHStack(alignment: .top, spacing: 0) {
+                    ForEach(10 ..< 20) { idx in
+                        Text("#\(idx): " + HipsterLorem.paragraphs(1, seed: UInt64(idx)))
+                            .frame(width: viewport.size.width * 0.6)
+                            .padding()
+                            .background(Color.secondary.opacity(0.2))
+                            .cornerRadius(8)
+                            .padding(.leading, 8)
+                    }
+                }
             }
         }
+    }
+}
+
+#Preview {
+    NavigationStack {
+        CarouselView()
     }
 }
