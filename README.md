@@ -8,6 +8,11 @@ A collection of SwiftUI patterns, best practices, and architectural approaches f
 
 - [SwiftUI Routes](./docs/navigation/swiftui-routes.md)
 
+### [UI](./docs/ui/)
+
+- [ScrollViewport](./docs/ui/ScrollViewport.md)
+- [HipsterLorem](./docs/ui/HipsterLorem.md)
+
 ### [Dependencies & Injection](./docs/dependencies/)
 
 - [Dependencies (PointFree)](./docs/dependencies/dependencies.md)
