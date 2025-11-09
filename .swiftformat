@@ -1,0 +1,34 @@
+# Swiftformat config
+
+--swiftversion 6.2
+--indent 4
+--tab-width 4
+
+--linebreaks lf
+--max-width 150
+
+--wrap-arguments before-first
+--wrap-parameters before-first
+--wrap-collections before-first
+--wrap-conditions preserve
+
+--ranges spaced
+--indent-case false
+--trim-whitespace always
+--semicolons never
+
+--else-position same-line
+--guard-else same-line
+
+--import-grouping testable-first
+--func-attributes prev-line
+--type-attributes prev-line
+--stored-var-attributes same-line
+--computed-var-attributes prev-line
+--complex-attributes prev-line
+
+--self remove
+--strip-unused-args closure-only
+--yoda-swap literals-only
+
+--ifdef no-indent
