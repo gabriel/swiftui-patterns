@@ -2,6 +2,10 @@
 
 A collection of SwiftUI patterns, best practices, and architectural approaches for building modern iOS applications.
 
+## 🌐 Live Site
+
+Browse the published docs at [gabriel.github.io/swiftui-patterns](https://gabriel.github.io/swiftui-patterns/).
+
 ## 🔧 Pattern Categories
 
 ### [Navigation & Routing](./docs/navigation/index.md)
