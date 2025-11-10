@@ -19,7 +19,7 @@ let package = Package(
         ),
     ],
     dependencies: [
-        .package(url: "https://github.com/gabriel/swiftui-snapshot-testing", from: "0.1.10"),
+        .package(url: "https://github.com/gabriel/swiftui-snapshot-testing", from: "0.1.12"),
     ],
     targets: [
         .target(

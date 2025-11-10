@@ -96,7 +96,7 @@ private struct TextCarousel: View {
     @Environment(\.viewport) private var viewport
 
     var body: some View {
-        ScrollViewport {
+        VStack {
             ScrollView(.horizontal, showsIndicators: false) {
                 LazyHStack(alignment: .top, spacing: 0) {
                     ForEach(0 ..< 10) { idx in
