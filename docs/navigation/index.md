@@ -1,4 +1,4 @@
-# Navigation & Routing
+# Navigation
 
 Pragmatic flows and routing helpers for complex SwiftUI apps.
 
